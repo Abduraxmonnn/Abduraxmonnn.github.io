@@ -1,0 +1,119 @@
+/* about-me.css */
+.about-me-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+/* about-me.css */
+
+/* Page header */
+.page-header {
+    text-align: center;
+    margin-top: 20px; /* Adjusted margin-top */
+}
+
+/* Separator line */
+.separator {
+    max-width: 150px;
+    width: 100%;
+    border: 1px solid #ccc; /* Light black line */
+}
+
+/* Main content sections */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-me-content {
+    margin-top: 40px;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-me-content ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-me-content ul li {
+    width: 100%;
+    display: flex;
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 150px; /* Add margin between list items */
+}
+
+/* Text section styling */
+.text-section {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.text-section p {
+    font-size: 16px;
+    font-family: "Noto Serif KR", serif;
+    line-height: 1.6;
+}
+
+.image-section {
+    width: 50%;
+    text-align: center;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Footer styling */
+.name-footer a {
+    font-size: 128px;
+    color: #e0dfdf;
+    font-family: "Playfair Display SC", serif;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    position: fixed;
+    bottom: -50px;
+    left: 1px;
+}
+
+/* Additional styles as needed */
+
+/* Ensure main section is scrollable */
+.about-me-main {
+    overflow-y: auto;
+    height: 100vh; /* Adjust as needed */
+    padding-bottom: 100px; /* Adjust padding if needed */
+}
+
+/*Scrollbars Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
