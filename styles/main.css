@@ -5,7 +5,7 @@ body {
     font-family: "Noto Serif KR", serif;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Hide overflow to prevent scrollbars during animation */
+    overflow: hidden;
 }
 
 .loading-overlay {
@@ -79,6 +79,15 @@ header h1 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+#hamburger-icon {
+    width: 30px;
+    cursor: pointer;
 }
 
 .main {
@@ -208,137 +217,126 @@ footer {
     transform: translateX(-50%);
 }
 
-/* Tablet and Phone Styles */
-@media (max-width: 768px) { /* Tablet */
+/* Styles for tablet and above */
+@media (min-width: 847px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 20px 50px;
+        width: 847px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: fixed;
+        z-index: 999;
+        background-color: white;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+
+/* Tablet version */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 50px; /* Adjust padding for tablets */
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .text-section, .image-section {
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
-        padding: 0;
+        background-color: white;
+        border-top: 1px solid #ccc;
     }
 
-    .about-me-content ul li {
-        flex-direction: column;
-        align-items: flex-start;
+    nav ul.open {
+        display: flex;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        max-height: 100px;
+        height: 100%;
+        /*background-color: rgba(0, 0, 0, 0.5);*/
+        z-index: 999;
     }
 
-    .image-section {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) { /* Phone */
-    header a {
-        font-size: 18px;
+    .hamburger-menu {
+        display: block;
     }
 
-    nav ul li a {
-        font-size: 14px;
+    .line-between {
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        margin-bottom: 10px;
     }
 
-    .page-header h2 {
-        font-size: 20px;
+    /* Main Section */
+    .main {
+        text-align: center;
     }
 
-    .text-section p {
-        font-size: 14px;
+    .image-container {
+        top: 20%;
+        margin-top: 35px;
+    }
+
+    /* Social Icons */
+    .social-icons {
+        justify-content: center;
     }
 
     .name-footer a {
-        font-size: 80px;
+        font-size: 64px;
+        bottom: 10px;
+        left: -10px;
+        writing-mode: vertical-rl;
     }
 }
 
+/* Phone version */
+@media (max-width: 480px) {
+    .social-icons {
+        top: 20%;
+        margin-top: 35px;
+        justify-content: center;
+    }
 
+    .image-container {
+        margin-top: 70px;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+    }
 
+    .name {
+        font-size: 18px;
+    }
 
+    .job-title {
+        font-size: 16px;
+    }
 
+    /* Social Icons */
+    .social-icons {
+        justify-content: center;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*@media (min-width: 768px) and (max-width: 992px) {*/
-/*    header {*/
-/*        padding: 20px 50px; !* Adjust padding for tablets *!*/
-/*    }*/
-/*}*/
-
-/* Styles for all screens (inherit desktop styles) */
-
-/* Phone Specific Styles (max-width: 768px) */
-/*@media (max-width: 768px) {*/
-
-/*    !* Header *!*/
-/*    header {*/
-/*        padding: 20px 30px;*/
-/*    }*/
-
-/*    !* Navigation *!*/
-/*    nav ul {*/
-/*        flex-wrap: wrap;*/
-/*        justify-content: center;*/
-/*    }*/
-
-/*    !* Main Section *!*/
-/*    .main {*/
-/*        text-align: center;*/
-/*    }*/
-
-/*    .image-container {*/
-/*        top: 20%;*/
-/*        margin-top: 35px;*/
-/*    }*/
-
-/*    !* Social Icons *!*/
-/*    .social-icons {*/
-/*        justify-content: center;*/
-/*    }*/
-
-/*    !* Buttons *!*/
-/*    .btn {*/
-/*        font-size: 16px;*/
-/*        padding: 8px 20px;*/
-/*    }*/
-
-/*    .buttons-container {*/
-/*        flex-direction: column;*/
-/*        gap: 10px;*/
-/*    }*/
-
-/*    !* Footer *!*/
-/*    .name-footer a {*/
-/*        font-size: 64px;*/
-/*        bottom: 10px;*/
-/*        left: -10px;*/
-/*        writing-mode: vertical-rl;*/
-/*    }*/
-
-/*    .copyright {*/
-/*        text-align: center;*/
-/*    }*/
-/*}*/
-
+    .name-footer a {
+        font-size: 64px;
+        bottom: 10px;
+        left: -10px;
+        writing-mode: vertical-rl;
+    }
+}
