@@ -4,6 +4,10 @@ body {
     scroll-behavior: smooth;
 }
 
+header a {
+    user-select: none;
+}
+
 .about-me-title {
     margin: 0;
     font-size: 24px;
@@ -17,7 +21,8 @@ body {
 /* Page header */
 .page-header {
     text-align: center;
-    margin-top: 100px; /* Adjusted margin-top */
+    margin-top: 100px;
+    user-select: none;
 }
 
 /* Separator line */
