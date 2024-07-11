@@ -1,4 +1,9 @@
 /* about-me.css */
+body {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
 .about-me-title {
     margin: 0;
     font-size: 24px;
@@ -12,7 +17,7 @@
 /* Page header */
 .page-header {
     text-align: center;
-    margin-top: 20px; /* Adjusted margin-top */
+    margin-top: 100px; /* Adjusted margin-top */
 }
 
 /* Separator line */
@@ -91,7 +96,6 @@ ul {
     left: 1px;
 }
 
-/* Additional styles as needed */
 
 /* Ensure main section is scrollable */
 .about-me-main {
@@ -110,10 +114,10 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ccc;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #888;
 }
