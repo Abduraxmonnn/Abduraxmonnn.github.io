@@ -102,7 +102,7 @@ header h1 {
 
 .image-container {
     position: absolute;
-    top: 30%; /* Updated top position */
+    top: 30%;
     transform: translateY(-50%);
     text-align: center;
 }
@@ -112,27 +112,49 @@ header h1 {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
-    transition: transform 0.3s ease; /* Added transition for hover effect */
+    transition: transform 0.3s ease;
 }
 
 .image-container img:hover {
-    transform: scale(1.1); /* Scale up on hover */
+    transform: scale(1.1);
 }
 
 .name-title {
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 .name {
-    font-size: 28px; /* Increase font size for name */
+    font-size: 28px;
+    margin: 0;
 }
 
 .job-title {
-    color: gray; /* Change job title color to gray */
+    color: gray;
 }
 
 .social-icons {
     margin-top: 20px;
+    animation: zoomIn 0.7s ease-in-out;
+
+}
+
+.name-title,
+.social-icons {
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .social-icons .icon {
