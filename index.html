@@ -57,12 +57,39 @@
     <!--        <a href="#" class="btn btn-primary">Read Blog</a>-->
     <!--        <a href="#" class="btn btn-secondary">About Me</a>-->
     <!--    </div>-->
+    <div class="countdown-timer">
+        <h2>New Year Countdown🎄</h2>
+        <div id="timer">
+            <span id="days">00</span> Days
+            <span id="hours">00</span> Hours
+            <span id="minutes">00</span> Minutes
+            <span id="seconds">00</span> Seconds
+        </div>
+    </div>
 </main>
 <footer>
     <div class="name-footer"><a href="https://steamcommunity.com/profiles/76561199218346899/" target="_blank">BeRLiN</a>
     </div>
     <div class="copyright">© 2024 Abduraxmon</div>
 </footer>
+<script>
+    function updateCountdown() {
+        const newYear = new Date(new Date().getFullYear() + 1, 0, 1);
+        const now = new Date();
+        const diff = newYear - now;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
 </body>
-</html
->
+</html>
