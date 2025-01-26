@@ -138,6 +138,10 @@ header h1 {
 
 .job-title {
     color: gray;
+
+    span {
+        color: #000000;
+    }
 }
 
 .social-icons {
