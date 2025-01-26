@@ -130,18 +130,18 @@ header h1 {
 .name {
     font-size: 28px;
     margin: 0;
-
-    span {
-        color: #808080;
-    }
 }
 
 .job-title {
     color: gray;
+}
 
-    span {
-        color: #000000;
-    }
+.darken-grey {
+    color: #808080;
+}
+
+.darken-black {
+    color: #000000;
 }
 
 .social-icons {
