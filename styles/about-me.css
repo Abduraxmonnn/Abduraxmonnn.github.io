@@ -1,128 +1,230 @@
-/* about-me.css */
-body {
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
+/* About Me Page Styles */
 
-header a {
-    user-select: none;
-}
-
-.about-me-title {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-
-/* about-me.css */
-
-/* Page header */
+/* Page Header */
 .page-header {
     text-align: center;
-    margin-top: 100px;
-    user-select: none;
+    margin-bottom: 60px;
+    padding-top: 120px;
 }
 
-/* Separator line */
+.page-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
 .separator {
-    max-width: 150px;
-    width: 100%;
-    border: 1px solid #ccc; /* Light black line */
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+    position: relative;
 }
 
-/* Main content sections */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.separator::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    border-radius: 2px;
 }
 
-.about-me-content {
-    margin-top: 40px;
-    padding: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+/* About Me Content */
+.about-me-main {
+    min-height: 100vh;
+    padding: 0 20px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-me-content ul {
-    display: flex;
-    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
 }
 
-.about-me-content ul li {
-    width: 100%;
+.about-me-content li {
     display: flex;
-    align-items: center; /* Center items horizontally */
-    margin-bottom: 150px; /* Add margin between list items */
+    flex-direction: column;
+    margin-bottom: 80px;
+    position: relative;
 }
 
-/* Text section styling */
+.about-me-content li:last-child {
+    margin-bottom: 0;
+}
+
+.about-me-content li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border-color);
+    transform: translateX(-50%);
+    z-index: -1;
+    display: none;
+}
+
 .text-section {
-    width: 50%;
-    padding-right: 20px;
+    flex: 1;
+    padding: 30px;
+    background-color: var(--bg-secondary);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-color);
 }
 
 .text-section p {
-    font-size: 16px;
-    font-family: "Noto Serif KR", serif;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.text-section p:last-child {
+    margin-bottom: 0;
 }
 
 .image-section {
-    width: 50%;
-    text-align: center;
+    flex: 1;
+}
+
+.image-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--bg-secondary);
+}
+
+.image-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px var(--shadow-color);
 }
 
 .image-section img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
 }
 
 .image-subtitle {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #777;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-light);
+    font-style: italic;
 }
 
-/* Footer styling */
-.name-footer a {
-    font-size: 128px;
-    color: #e0dfdf;
-    font-family: "Playfair Display SC", serif;
+/* Header Logo Link */
+.header-logo {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 24px;
     font-weight: 700;
-    cursor: pointer;
-    user-select: none;
-    position: fixed;
-    bottom: -50px;
-    left: 1px;
+    transition: color 0.3s ease;
 }
 
-
-/* Ensure main section is scrollable */
-.about-me-main {
-    overflow-y: auto;
-    height: 100vh; /* Adjust as needed */
-    padding-bottom: 100px; /* Adjust padding if needed */
+.header-logo:hover {
+    color: var(--primary-color);
 }
 
-/*Scrollbars Styles */
-::-webkit-scrollbar {
-    width: 10px;
+/* Active Navigation Link */
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.nav-link.active::after {
+    width: 100%;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 5px;
+.mobile-menu ul li a.active {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #888;
+/* Media Queries */
+@media (min-width: 992px) {
+    .about-me-content li {
+        flex-direction: row;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .about-me-content li:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .text-section, .image-section {
+        width: 50%;
+    }
+
+    .about-me-content li::after {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .page-header h2 {
+        font-size: 36px;
+    }
+
+    .text-section p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        margin-bottom: 40px;
+        padding-top: 100px;
+    }
+
+    .page-header h2 {
+        font-size: 32px;
+    }
+
+    .about-me-content li {
+        margin-bottom: 50px;
+    }
+
+    .text-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .text-section p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .image-subtitle {
+        font-size: 14px;
+    }
 }
