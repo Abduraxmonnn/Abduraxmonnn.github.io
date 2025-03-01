@@ -3,81 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdurakhmon</title>
-    <link rel="stylesheet" href="styles/about-me.css">
+    <title>About Me | Abdurakhmon</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/about-me.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <script src="js/main.js" defer></script>
 
-    <!--    Noto Serif KR -->
+    <!-- Noto Serif KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
 
-    <!--    Playfair Display SC -->
+    <!-- Playfair Display SC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
           rel="stylesheet">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- Cursor -->
+<div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+<!-- Loading Overlay -->
 <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-spinner"></div>
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading<span class="dot-1">.</span><span class="dot-2">.</span><span
+                class="dot-3">.</span></div>
+    </div>
 </div>
+
+<!-- Background Elements -->
+<div class="bg-elements">
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
+</div>
+
+<!-- Header -->
 <header>
-    <a href="index.html" class="about-me-title">Abduraxmonnn</a>
+    <div class="logo" data-aos="fade-down" data-aos-delay="300">
+        <a href="index.html" class="header-logo">Abduraxmonnn</a>
+    </div>
     <nav>
-        <ul>
-            <!--            <li><a href="#">Button 1</a></li>-->
-            <!--            <li><a href="#">Button 2</a></li>-->
-            <li><a href="https://t.me/abduraxmons_vlog" target="_blank">Channel</a></li>
-            <li><a href="about-me.html">About Me</a></li>
+        <ul class="nav-links" data-aos="fade-down" data-aos-delay="400">
+            <li><a href="https://t.me/abduraxmon_vlog" class="nav-link">Channel</a></li>
+            <li><a href="about-me.html" class="nav-link active">About Me</a></li>
+            <li><a href="#" class="nav-link theme-toggle" id="themeToggle">
+                <span class="light-icon">☀️</span>
+                <span class="dark-icon">🌙</span>
+            </a></li>
         </ul>
     </nav>
     <div class="hamburger-menu" onclick="toggleMenu()">
-        <img id="hamburger-icon" src="images/icons/hamburger-menu-23.svg" alt="Hamburger Menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://t.me/abduraxmon_vlog">Channel</a></li>
+        <li><a href="about-me.html" class="active">About Me</a></li>
+        <li><a href="#" id="mobileThemeToggle">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
 <main class="about-me-main">
-    <div class="page-header">
+    <div class="page-header" data-aos="fade-up" data-aos-delay="500">
         <h2>About Me</h2>
-        <hr class="separator">
+        <div class="separator"></div>
     </div>
+
     <div class="about-me-content">
         <ul>
-            <li>
+            <li data-aos="fade-up" data-aos-delay="600">
                 <div class="text-section">
                     <p>
                         I'm Abdurakhmon, and I'm an enthusiastic web developer and a responsible person, hungry for a
-                        lot
-                        of knowledge and experience, I'm genuinely passionate about using my skills to create meaningful
+                        lot of knowledge and experience, I'm genuinely passionate about using my skills to create
+                        meaningful
                         experiences through the development of products that can truly impact people's lives.
                     </p>
                 </div>
 
-                <div class="image-section">
-                    <img src="images/about-me-1.webp" alt="about-me-1">
-                    <div class="image-subtitle">GDG Tashkent 2024. Tashkent</div>
+                <div class="image-section" data-aos="fade-left" data-aos-delay="700">
+                    <div class="image-card">
+                        <img src="images/about-me-1.webp" alt="GDG Tashkent 2024">
+                        <div class="image-subtitle">GDG Tashkent 2024. Tashkent</div>
+                    </div>
                 </div>
             </li>
-            <li>
+
+            <li data-aos="fade-up" data-aos-delay="800">
                 <div class="text-section">
                     <p>
                         In my free time, I pursue a diverse range of interests that keep me engaged and inspired. I'm an
                         avid reader, constantly exploring new books that stimulate my imagination and expand my
                         knowledge.
-                        <br>
+                    </p>
+                    <p>
                         I'm also passionate about UI/UX design, where I focus on creating intuitive interfaces that
                         prioritize user experience. Alongside this, I delve into front-end development, where I enjoy
                         turning design concepts into interactive and functional websites.
                     </p>
                 </div>
 
-                <div class="image-section">
-                    <img src="images/about-me-2.webp" alt="about-me-2">
-                    <div class="image-subtitle">Google I/O extended. Tashkent</div>
+                <div class="image-section" data-aos="fade-left" data-aos-delay="900">
+                    <div class="image-card">
+                        <img src="images/about-me-2.webp" alt="Google I/O extended">
+                        <div class="image-subtitle">Google I/O extended. Tashkent</div>
+                    </div>
                 </div>
             </li>
-            <li>
+
+            <li data-aos="fade-up" data-aos-delay="1000">
                 <div class="text-section">
                     <p>
                         I thoroughly enjoyed my time at Kimyo International University in Tashkent, where I gained a
@@ -87,21 +142,99 @@
                     </p>
                 </div>
 
-                <div class="image-section">
-                    <img src="images/about-me-3.webp" alt="about-me-3">
-                    <div class="image-subtitle">University. Tashkent</div>
+                <div class="image-section" data-aos="fade-left" data-aos-delay="1100">
+                    <div class="image-card">
+                        <img src="images/about-me-3.webp" alt="University">
+                        <div class="image-subtitle">University. Tashkent</div>
+                    </div>
                 </div>
             </li>
         </ul>
     </div>
 </main>
-<div class="name-footer">
-    <a href="https://steamcommunity.com/profiles/76561199218346899/" target="_blank">BeRLiN</a>
-</div>
+
+<!-- Footer -->
+<footer>
+    <div class="name-footer"><a href="https://steamcommunity.com/profiles/76561199218346899/" target="_blank">BeRLiN</a>
+    </div>
+    <div class="copyright">© 2024 Abduraxmon</div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    });
+
+    // Loading overlay
     window.addEventListener('load', function () {
-        const loadingOverlay = document.getElementById('loadingOverlay');
-        loadingOverlay.classList.add('hide');
+        setTimeout(function () {
+            document.getElementById('loadingOverlay').classList.add('hide');
+        }, 1500);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('open');
+        document.querySelector('.hamburger-icon').classList.toggle('active');
+    }
+
+    // Custom cursor
+    document.addEventListener('DOMContentLoaded', function () {
+        const cursor = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-dot-outline');
+
+        document.addEventListener('mousemove', function (e) {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Add hover effect for links
+        const links = document.querySelectorAll('a, button, .btn');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                cursorOutline.classList.add('cursor-hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                cursorOutline.classList.remove('cursor-hover');
+            });
+        });
+    });
+
+    // Theme toggle
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-theme');
+        }
+
+        function toggleTheme() {
+            body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        themeToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleTheme();
+        });
+
+        mobileThemeToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleTheme();
+        });
     });
 </script>
 </body>
