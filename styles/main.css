@@ -368,7 +368,7 @@ header {
     width: 100%;
     height: 100vh;
     background-color: var(--bg-color);
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -383,6 +383,7 @@ header {
 .mobile-menu ul {
     list-style: none;
     text-align: center;
+    padding: 0;
 }
 
 .mobile-menu ul li {
@@ -397,8 +398,32 @@ header {
     transition: color 0.3s ease;
 }
 
-.mobile-menu ul li a:hover {
+.mobile-menu ul li a:hover,
+.mobile-menu ul li a.active {
     color: var(--primary-color);
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001; /* Ensure it's above other elements in the mobile menu */
+    padding: 10px; /* Increase clickable area */
+}
+
+.close-menu:hover {
+    color: var(--primary-color);
+}
+
+.close-menu svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Main Content */

@@ -1,14 +1,4 @@
 // main.js
-
-function toggleMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('open');
-
-    // Toggle background overlay on body
-    const body = document.querySelector('body');
-    body.classList.toggle('menu-open');
-}
-
 window.addEventListener('load', function () {
     const loadingOverlay = document.getElementById('loadingOverlay');
     loadingOverlay.classList.add('hide');
@@ -32,10 +22,10 @@ window.addEventListener('load', () => {
 // Main JavaScript file
 
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Hide loading overlay after page loads
-    window.addEventListener('load', function() {
-        setTimeout(function() {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
             document.getElementById('loadingOverlay').classList.add('hide');
         }, 1500);
     });
@@ -47,22 +37,73 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile menu toggle function
+// Mobile menu toggle
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.classList.toggle('open');
-    document.querySelector('.hamburger-icon').classList.toggle('active');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
 
-    // Prevent scrolling when menu is open
-    if (mobileMenu.classList.contains('open')) {
-        document.body.style.overflow = 'hidden';
-    } else {
+    if (mobileMenu && hamburgerIcon) {
+        mobileMenu.classList.toggle('open');
+        hamburgerIcon.classList.toggle('active');
+
+        // Prevent scrolling when menu is open
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : 'auto';
+    }
+}
+
+// Close mobile menu
+function closeMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+    if (mobileMenu && hamburgerIcon) {
+        mobileMenu.classList.remove('open');
+        hamburgerIcon.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 }
 
+// Event listeners
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM fully loaded and parsed');
+
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const closeMenuButton = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburgerMenu) {
+        console.log('Hamburger menu found');
+        hamburgerMenu.addEventListener('click', toggleMenu);
+    } else {
+        console.log('Hamburger menu not found');
+    }
+
+    if (closeMenuButton) {
+        console.log('Close menu button found');
+        closeMenuButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log('Close button clicked');
+            closeMenu();
+        });
+    } else {
+        console.log('Close menu button not found');
+    }
+
+    // Close menu when clicking outside
+    if (mobileMenu) {
+        document.addEventListener('click', function (event) {
+            if (mobileMenu.classList.contains('open') &&
+                !mobileMenu.contains(event.target) &&
+                !hamburgerMenu.contains(event.target)) {
+                closeMenu();
+            }
+        });
+    }
+});
+
 // Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const mobileMenu = document.getElementById('mobileMenu');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
 
@@ -76,7 +117,7 @@ document.addEventListener('click', function(event) {
 });
 
 // Add parallax effect to background elements
-document.addEventListener('mousemove', function(e) {
+document.addEventListener('mousemove', function (e) {
     const circles = document.querySelectorAll('.bg-circle');
     const mouseX = e.clientX / window.innerWidth;
     const mouseY = e.clientY / window.innerHeight;
