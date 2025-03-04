@@ -44,21 +44,23 @@ function initCustomCursor() {
 
 // Group posts by year and month
 function groupPostsByDate(posts) {
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date)); // Ensure sorting before grouping
+
     return posts.reduce((groups, post) => {
-        const date = new Date(post.date)
-        const year = date.getFullYear()
-        const month = date.toLocaleString("default", {month: "long"})
+        const date = new Date(post.date);
+        const year = date.getFullYear();
+        const month = date.toLocaleString("default", {month: "long"});
 
         if (!groups[year]) {
-            groups[year] = {}
+            groups[year] = {};
         }
         if (!groups[year][month]) {
-            groups[year][month] = []
+            groups[year][month] = [];
         }
 
-        groups[year][month].push(post)
-        return groups
-    }, {})
+        groups[year][month].push(post);
+        return groups;
+    }, {});
 }
 
 // Load blog posts from JSON file
@@ -90,10 +92,10 @@ function loadBlogPosts() {
 
                 // Create sections for each year and month
                 Object.entries(groupedPosts)
-                    .reverse()
+                    .sort((a, b) => b[0] - a[0])
                     .forEach(([year, months]) => {
                         Object.entries(months)
-                            .reverse()
+                            .sort((a, b) => new Date(`1 ${b[0]} ${year}`) - new Date(`1 ${a[0]} ${year}`)) // Sort months descending
                             .forEach(([month, posts]) => {
                                 const monthSection = document.createElement("div")
                                 monthSection.className = "month-section"
