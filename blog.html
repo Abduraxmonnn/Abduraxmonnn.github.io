@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/about-me.css">
     <link rel="stylesheet" href="styles/blog.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/main.js"></script>
     <script src="js/blog.js"></script>
 
@@ -33,8 +36,8 @@
         <a href="index.html" class="header-logo">Abduraxmonnn</a>
     </div>
     <nav>
-        <ul class="nav-links" data-aos="fade-down" data-aos-delay="400">
-            <li><a href="https://t.me/s/abduraxmon_vlog" class="nav-link">Channel</a></li>
+        <ul class="nav-links">
+            <li><a href="https://t.me/abduraxmon_vlog" class="nav-link">Channel</a></li>
             <li><a href="blog.html" class="nav-link active">Blog</a></li>
             <li><a href="about-me.html" class="nav-link">About Me</a></li>
             <li><a href="#" class="nav-link theme-toggle" id="themeToggle">
@@ -43,7 +46,7 @@
             </a></li>
         </ul>
     </nav>
-    <div class="hamburger-menu" onclick="toggleMenu()">
+    <div class="hamburger-menu">
         <div class="hamburger-line"></div>
         <div class="hamburger-line"></div>
         <div class="hamburger-line"></div>
@@ -79,83 +82,6 @@
         </div>
     </div>
 </main>
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    // Initialize AOS
-    document.addEventListener('DOMContentLoaded', function () {
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    });
-
-    // Loading overlay
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            document.getElementById('loadingOverlay').classList.add('hide');
-        }, 1500);
-    });
-
-    // Mobile menu toggle
-    function toggleMenu() {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('open');
-        document.querySelector('.hamburger-icon').classList.toggle('active');
-    }
-
-    // Custom cursor
-    document.addEventListener('DOMContentLoaded', function () {
-        const cursor = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-dot-outline');
-
-        document.addEventListener('mousemove', function (e) {
-            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        });
-
-        // Add hover effect for links
-        const links = document.querySelectorAll('a, button, .btn');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor-hover');
-                cursorOutline.classList.add('cursor-hover');
-            });
-            link.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-hover');
-                cursorOutline.classList.remove('cursor-hover');
-            });
-        });
-    });
-
-    // Theme toggle
-    document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('themeToggle');
-        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-        const body = document.body;
-
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-theme');
-        }
-
-        function toggleTheme() {
-            body.classList.toggle('dark-theme');
-            localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
-        }
-
-        themeToggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            toggleTheme();
-        });
-
-        mobileThemeToggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            toggleTheme();
-        });
-    });
-</script>
 </body>
 </html>
 

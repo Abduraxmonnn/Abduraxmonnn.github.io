@@ -48,15 +48,15 @@
     position: fixed;
     top: 100px;
     left: 50%;
-    transform: translateX(300px); /* Position to the right of the blog-main container */
-    background-color: #f4f4f4;
+    transform: translateX(300px);
+    background-color: var(--bg-secondary);
     padding: 8px 20px;
     border-radius: 100px;
     font-size: 18px;
     font-weight: 500;
-    color: #333;
+    color: var(--text-color);
     z-index: 10;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .blog-container {
@@ -75,6 +75,11 @@
     font-weight: 500;
     color: #000;
     margin: 40px 0 20px;
+    transition: color 0.3s ease;
+}
+
+.dark-theme .month-heading {
+    color: var(--primary-color);
 }
 
 .blog-posts {
@@ -84,7 +89,7 @@
 
 .blog-post {
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
@@ -95,14 +100,14 @@
 
 .blog-post-date {
     font-size: 16px;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 8px;
 }
 
 .blog-post-title {
     font-size: 20px;
     font-weight: normal;
-    color: #000;
+    color: var(--text-color);
     margin: 0;
 }
 
@@ -113,7 +118,7 @@
     align-items: center;
     justify-content: center;
     padding: 50px 0;
-    color: #666;
+    color: var(--text-light);
 }
 
 .blog-spinner {
@@ -125,7 +130,7 @@
 .no-posts {
     text-align: center;
     padding: 50px 0;
-    color: #666;
+    color: var(--text-light);
     font-style: italic;
 }
 
