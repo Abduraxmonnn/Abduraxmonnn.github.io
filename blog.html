@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdurakhmon - Blog</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/about-me.css">
+    <link rel="stylesheet" href="styles/blog.css">
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<!-- Page Loader -->
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+<!-- Header -->
+<header>
+    <div class="logo" data-aos="fade-down" data-aos-delay="300">
+        <a href="index.html" class="header-logo">Abduraxmonnn</a>
+    </div>
+    <nav>
+        <ul class="nav-links" data-aos="fade-down" data-aos-delay="400">
+            <li><a href="https://t.me/s/abduraxmon_vlog" class="nav-link">Channel</a></li>
+            <li><a href="blog.html" class="nav-link active">Blog</a></li>
+            <li><a href="about-me.html" class="nav-link">About Me</a></li>
+            <li><a href="#" class="nav-link theme-toggle" id="themeToggle">
+                <span class="light-icon">☀️</span>
+                <span class="dark-icon">🌙</span>
+            </a></li>
+        </ul>
+    </nav>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+    </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+    <ul>
+        <li><a href="https://t.me/abduraxmon_vlog">Channel</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="#" id="mobileThemeToggle">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </a></li>
+    </ul>
+</div>
+
+<!-- Blog Content -->
+<main class="blog-main">
+    <div class="page-header" data-aos="fade-up" data-aos-delay="500">
+        <h1 class="page-title" data-aos="fade-down" data-aos-duration="800">Blog</h1>
+        <div class="separator"></div>
+    </div>
+    <div class="blog-container">
+        <!-- Blog posts will be loaded here from JSON -->
+        <div id="blog-posts" class="blog-posts">
+            <div class="loading-posts">
+                <div class="loading-spinner blog-spinner"></div>
+                <p>Loading articles...</p>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    });
+
+    // Loading overlay
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('loadingOverlay').classList.add('hide');
+        }, 1500);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('open');
+        document.querySelector('.hamburger-icon').classList.toggle('active');
+    }
+
+    // Custom cursor
+    document.addEventListener('DOMContentLoaded', function () {
+        const cursor = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-dot-outline');
+
+        document.addEventListener('mousemove', function (e) {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Add hover effect for links
+        const links = document.querySelectorAll('a, button, .btn');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                cursorOutline.classList.add('cursor-hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                cursorOutline.classList.remove('cursor-hover');
+            });
+        });
+    });
+
+    // Theme toggle
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-theme');
+        }
+
+        function toggleTheme() {
+            body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        themeToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleTheme();
+        });
+
+        mobileThemeToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleTheme();
+        });
+    });
+</script>
+</body>
+</html>
+

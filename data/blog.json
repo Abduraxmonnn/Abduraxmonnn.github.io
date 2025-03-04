@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Getting Started with Modern JavaScript",
+      "date": "2024-03-01",
+      "excerpt": "JavaScript has evolved significantly over the years. In this post, I'll walk you through the essential modern JavaScript features that every developer should know.",
+      "url": "#article-1"
+    },
+    {
+      "id": 2,
+      "title": "Building Responsive Websites with CSS Grid",
+      "date": "2024-02-15",
+      "excerpt": "CSS Grid has revolutionized how we create layouts on the web. Learn how to build complex, responsive layouts with just a few lines of CSS.",
+      "url": "#article-2"
+    },
+    {
+      "id": 3,
+      "title": "The Power of Server-Side Rendering",
+      "date": "2024-01-28",
+      "excerpt": "Server-side rendering offers significant benefits for web applications. Let's explore when and why you should consider using SSR in your projects.",
+      "url": "#article-3"
+    },
+    {
+      "id": 4,
+      "title": "Optimizing Database Queries for Performance",
+      "date": "2024-01-10",
+      "excerpt": "Database performance can make or break your application. Discover practical techniques to optimize your database queries and improve overall performance.",
+      "url": "#article-4"
+    },
+    {
+      "id": 5,
+      "title": "Introduction to Docker for Developers",
+      "date": "2023-12-20",
+      "excerpt": "Docker has become an essential tool in modern development workflows. Learn the basics of containerization and how to get started with Docker.",
+      "url": "#article-5"
+    },
+    {
+      "id": 6,
+      "title": "Securing Your Web Applications",
+      "date": "2023-12-05",
+      "excerpt": "Security should be a priority for every web developer. This post covers essential security practices to protect your applications from common vulnerabilities.",
+      "url": "#article-6"
+    },
+    {
+      "id": 7,
+      "title": "The Art of Clean Code",
+      "date": "2023-11-18",
+      "excerpt": "Writing clean, maintainable code is a skill that takes practice. Explore principles and techniques for writing code that others (and your future self) will thank you for.",
+      "url": "#article-7"
+    },
+    {
+      "id": 8,
+      "title": "Mastering Git Workflows",
+      "date": "2023-11-02",
+      "excerpt": "Effective Git workflows can significantly improve team collaboration. Discover strategies for managing branches, pull requests, and code reviews.",
+      "url": "#article-8"
+    }
+  ]
+}
+
