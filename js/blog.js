@@ -176,3 +176,27 @@ function createPostElement(post) {
 
     return postElement
 }
+
+// Custom cursor
+document.addEventListener('DOMContentLoaded', function () {
+    const cursor = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-dot-outline');
+
+    document.addEventListener('mousemove', function (e) {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+
+    // Add hover effect for links
+    const links = document.querySelectorAll('a, button, .btn');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+            cursorOutline.classList.add('cursor-hover');
+        });
+        link.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+            cursorOutline.classList.remove('cursor-hover');
+        });
+    });
+});
