@@ -88,14 +88,34 @@
 }
 
 .blog-post {
+    position: relative;
     padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease;
 }
 
 .blog-post:hover {
-    opacity: 0.7;
+    transform: translateX(10px);
+    opacity: 0.8;
+}
+
+/* Arrow effect */
+.blog-post::after {
+    content: "→"; /* Unicode right arrow */
+    font-size: 20px;
+    color: var(--primary-color);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.blog-post:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
 }
 
 .blog-post-date {
