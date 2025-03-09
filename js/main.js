@@ -37,3 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMenuButton = document.getElementById("closeMenu")
     const mobileMenu = document.querySelector(".mobile-menu") // Changed from getElementById to querySelector
 })
+
+// Toggle to Close Menu
+function toggleCloseMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.querySelector('.hamburger-icon').classList.remove('active');
+}

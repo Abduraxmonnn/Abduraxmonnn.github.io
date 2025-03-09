@@ -202,3 +202,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Mobile menu toggle
+function toggleMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('open');
+    document.querySelector('.hamburger-icon').classList.toggle('active');
+}

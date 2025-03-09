@@ -37,6 +37,7 @@
     </div>
     <nav>
         <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="https://t.me/abduraxmon_vlog" class="nav-link">Channel</a></li>
             <li><a href="blog.html" class="nav-link active">Blog</a></li>
             <li><a href="about-me.html" class="nav-link">About Me</a></li>
@@ -46,19 +47,30 @@
             </a></li>
         </ul>
     </nav>
-    <div class="hamburger-menu">
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </header>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu" onclick="toggleCloseMenu()" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+
     <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="https://t.me/abduraxmon_vlog">Channel</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="about-me.html" class="nav-link">About Me</a></li>
         <li><a href="#" id="mobileThemeToggle">
             <span class="light-icon">☀️</span>
             <span class="dark-icon">🌙</span>
