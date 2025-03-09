@@ -32,10 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize theme toggle
     initThemeToggle()
-
-    const hamburgerMenu = document.querySelector(".hamburger-menu")
-    const closeMenuButton = document.getElementById("closeMenu")
-    const mobileMenu = document.querySelector(".mobile-menu") // Changed from getElementById to querySelector
 })
 
 // Toggle to Close Menu
